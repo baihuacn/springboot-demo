@@ -1,16 +1,17 @@
-package com.example.demo.service.impl;
+package com.example.demo.serviceImpl;
 
 import com.example.demo.bean.UserBean;
 import com.example.demo.mapper.UserMapper;
 import com.example.demo.service.UserService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
-    private UserMapper userMapper;
+    private final UserMapper userMapper;
 
     @Override
     public UserBean loginIn(String name) {
